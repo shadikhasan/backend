@@ -1,0 +1,11 @@
+Django
+drf-nested-routers
+djangorestframework
+reportlab
+psycopg2
+requests
+django-cors-headers
+djangorestframework-simplejwt
+django-filter
+python-dotenv 
+geopy

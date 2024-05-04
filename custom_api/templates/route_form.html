@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Route Finder</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+        #map {
+            height: 50%;
+            width: 100%;
+        }
+        .form-container {
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+        .form-container label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .form-container input, .form-container select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        .form-container button {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .form-container button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1>Route Finder</h1>
+    <div id="map"></div>
+    <div class="form-container">
+        <form id="routeForm">
+            <label for="source_lat">Source Latitude:</label>
+            <input type="text" id="source_lat" name="source_lat" required>
+            <label for="source_lon">Source Longitude:</label>
+            <input type="text" id="source_lon" name="source_lon" required>
+            <label for="dest_lat">Destination Latitude:</label>
+            <input type="text" id="dest_lat" name="dest_lat" required>
+            <label for="dest_lon">Destination Longitude:</label>
+            <input type="text" id="dest_lon" name="dest_lon" required>
+            <label for="optimize_for">Optimize For:</label>
+            <select id="optimize_for" name="optimize_for" required>
+                <option value="">Select Option</option>
+                <option value="ShortestRoute">Shortest Route</option>
+                <option value="FastestRoute">Fastest Route</option>
+            </select>
+            <button type="submit">Find Route</button>
+        </form>
+        <div id="response"></div> <!-- This section will display the route information -->
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script>
+        var map = L.map('map').setView([51.505, -0.09], 13);
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19
+        }).addTo(map);
+
+        var routeLayer;
+
+        document.getElementById("routeForm").addEventListener("submit", function (event) {
+            event.preventDefault();
+            var form = event.target;
+            var formData = new FormData(form);
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", "{% url 'route' %}");
+            xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest");
+            xhr.onload = function () {
+                if (xhr.status === 200) {
+                    var response = JSON.parse(xhr.responseText);
+                    document.getElementById("response").innerHTML = "Route found successfully!";
+                    // Clear previous route layer
+                    if (routeLayer) {
+                        map.removeLayer(routeLayer);
+                    }
+                    // Draw route on map
+                    var routeCoordinates = response.route_coordinates; // Assuming this is how your response data is structured
+                    routeLayer = L.polyline(routeCoordinates, {color: 'blue'}).addTo(map);
+                    map.fitBounds(routeLayer.getBounds());
+                } else {
+                    document.getElementById("response").innerHTML = "Error: " + xhr.statusText;
+                }
+            };
+            xhr.onerror = function () {
+                document.getElementById("response").innerHTML = "Error: Failed to make request.";
+            };
+            xhr.send(formData);
+        });
+    </script>
+</body>
+</html>
