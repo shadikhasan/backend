@@ -1,0 +1,552 @@
+{
+	"info": {
+		"_postman_id": "512b03a9-c77f-4edc-a580-be5c01db8cba",
+		"name": "EcoSynce Project",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "32760727"
+	},
+	"item": [
+		{
+			"name": "User Management Endpoints",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"admin2\",\r\n    \"password\":\"shadik\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://127.0.0.1:8000/auth/login/"
+					},
+					"response": []
+				},
+				{
+					"name": "Get all users lists",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzE0Njg3ODYwLCJpYXQiOjE3MTQ2Nzg4NjAsImp0aSI6IjczYjAzYWRmM2Y2NDRhMmM4MmUzOGE5MGY5ZjExMzJkIiwidXNlcl9pZCI6MX0.BY5-BLJIGk-GQoMS_q_mPE8SMGtRbRzoOoH_iOKB7gI",
+								"type": "default",
+								"uuid": "894a32a7-6a5f-493e-9cb6-26c41b5b36a5"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"role\": 3\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://127.0.0.1:8000/users"
+					},
+					"response": []
+				},
+				{
+					"name": "Get specific Users Details",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzE0Njg3ODYwLCJpYXQiOjE3MTQ2Nzg4NjAsImp0aSI6IjczYjAzYWRmM2Y2NDRhMmM4MmUzOGE5MGY5ZjExMzJkIiwidXNlcl9pZCI6MX0.BY5-BLJIGk-GQoMS_q_mPE8SMGtRbRzoOoH_iOKB7gI",
+								"type": "default",
+								"uuid": "c9e80f94-97f7-4a9a-bc85-7a3f7a0d2494"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"role\": 3\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://127.0.0.1:8000/users/1"
+					},
+					"response": []
+				},
+				{
+					"name": "Create New User",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzE0Njg3ODYwLCJpYXQiOjE3MTQ2Nzg4NjAsImp0aSI6IjczYjAzYWRmM2Y2NDRhMmM4MmUzOGE5MGY5ZjExMzJkIiwidXNlcl9pZCI6MX0.BY5-BLJIGk-GQoMS_q_mPE8SMGtRbRzoOoH_iOKB7gI",
+								"type": "default",
+								"uuid": "4d2e11c6-75f8-4dae-b122-f7a93a5f23ea"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": [\r\n        \"This field is required.\"\r\n    ],\r\n    \"email\": [\r\n        \"This field is required.\"\r\n    ],\r\n    \"password\": [\r\n        \"This field is required.\"\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://127.0.0.1:8000/users/"
+					},
+					"response": []
+				},
+				{
+					"name": "Update users details",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzE0Njg3ODYwLCJpYXQiOjE3MTQ2Nzg4NjAsImp0aSI6IjczYjAzYWRmM2Y2NDRhMmM4MmUzOGE5MGY5ZjExMzJkIiwidXNlcl9pZCI6MX0.BY5-BLJIGk-GQoMS_q_mPE8SMGtRbRzoOoH_iOKB7gI",
+								"type": "default",
+								"uuid": "6cec3983-1cb7-47f6-b686-f644006f6f37"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": [\r\n        \"This field is required.\"\r\n    ],\r\n    \"email\": [\r\n        \"This field is required.\"\r\n    ],\r\n    \"password\": [\r\n        \"This field is required.\"\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://127.0.0.1:8000/users/2/"
+					},
+					"response": []
+				},
+				{
+					"name": "Patch users details",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzE0NzU5NzU5LCJpYXQiOjE3MTQ3NTA3NTksImp0aSI6IjlmZjMwNzQ5ZmQwNzQ3NGE4NGZmMTgwYTAzNjdmODQxIiwidXNlcl9pZCI6MX0.3WB5UV_U5Llr-ZM4eEDrHaN-5kUk-Jh1enukAzsgmz8",
+								"uuid": "ccd03ae0-359c-4c2b-b6d5-8e8471a7def3"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"shishir\",\r\n    \"first_name\": \"shadik\",\r\n    \"last_name\": \"mahmud\",\r\n    \"email\": \"shadidk@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://127.0.0.1:8000/users/3/"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete user",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzE0Njg3ODYwLCJpYXQiOjE3MTQ2Nzg4NjAsImp0aSI6IjczYjAzYWRmM2Y2NDRhMmM4MmUzOGE5MGY5ZjExMzJkIiwidXNlcl9pZCI6MX0.BY5-BLJIGk-GQoMS_q_mPE8SMGtRbRzoOoH_iOKB7gI",
+								"type": "default",
+								"uuid": "8691eee4-24d2-41db-9db9-a6390980902b"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": [\r\n        \"This field is required.\"\r\n    ],\r\n    \"email\": [\r\n        \"This field is required.\"\r\n    ],\r\n    \"password\": [\r\n        \"This field is required.\"\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://127.0.0.1:8000/users/2/"
+					},
+					"response": []
+				},
+				{
+					"name": "Get all available roles",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzE0Njg3ODYwLCJpYXQiOjE3MTQ2Nzg4NjAsImp0aSI6IjczYjAzYWRmM2Y2NDRhMmM4MmUzOGE5MGY5ZjExMzJkIiwidXNlcl9pZCI6MX0.BY5-BLJIGk-GQoMS_q_mPE8SMGtRbRzoOoH_iOKB7gI",
+								"type": "default",
+								"uuid": "438caa4a-dbd1-45cf-bdd4-1b422706d9f1"
+							}
+						],
+						"url": "http://127.0.0.1:8000/users/roles/"
+					},
+					"response": []
+				},
+				{
+					"name": "Get a users roles",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzE0Njg3ODYwLCJpYXQiOjE3MTQ2Nzg4NjAsImp0aSI6IjczYjAzYWRmM2Y2NDRhMmM4MmUzOGE5MGY5ZjExMzJkIiwidXNlcl9pZCI6MX0.BY5-BLJIGk-GQoMS_q_mPE8SMGtRbRzoOoH_iOKB7gI",
+								"type": "default",
+								"uuid": "5745aef9-21f3-4715-98d3-66344ef20541"
+							}
+						],
+						"url": "http://127.0.0.1:8000/users/2/roles/"
+					},
+					"response": []
+				},
+				{
+					"name": "Update a Users Roles",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzE0NzYxMzc2LCJpYXQiOjE3MTQ3NTIzNzYsImp0aSI6IjgyNTAzOTM1NGJhNDRkZDBiNGJmZjM3ZmU1OThlZGFlIiwidXNlcl9pZCI6MX0.08BsgeSrhV_U8ZlP_WnGe7pCAdFMj6SAsbI9XhYrrjk",
+								"uuid": "27d38042-0e12-4727-bfca-801a276abcda"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"role\": 3\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://127.0.0.1:8000/users/3/roles/"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Profile Management Endpoints",
+			"item": [
+				{
+					"name": "Profile",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzE0Njg5NzYzLCJpYXQiOjE3MTQ2ODA3NjMsImp0aSI6IjE2Y2MxN2JlNWYxNzQ5NmU5NzU5MTg0MzY1OWM3Y2RhIiwidXNlcl9pZCI6M30.GDKZMz6SLL6ZRj2KJzH8b4OY8SJhot9QLWdCvLr-glQ",
+								"type": "default",
+								"uuid": "cb07f1f1-3d30-43a9-ad44-2d28f059ad18"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"role\": 3\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://127.0.0.1:8000/profile"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Profile",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzE0Njg5NzYzLCJpYXQiOjE3MTQ2ODA3NjMsImp0aSI6IjE2Y2MxN2JlNWYxNzQ5NmU5NzU5MTg0MzY1OWM3Y2RhIiwidXNlcl9pZCI6M30.GDKZMz6SLL6ZRj2KJzH8b4OY8SJhot9QLWdCvLr-glQ",
+								"type": "default",
+								"uuid": "a3461422-fda3-4a52-9de7-baa312cfb8e2"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"shadik2\",\r\n    \"first_name\": \"shadik\",\r\n    \"last_name\": \"tonni\",\r\n    \"email\": \"shadik@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://127.0.0.1:8000/profile/"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "RBAC Endpoints",
+			"item": [
+				{
+					"name": "Get all Groups",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"LandFill Manager Permissions\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://127.0.0.1:8000/rbac/roles/"
+					},
+					"response": []
+				},
+				{
+					"name": "Create a Group for Permissions",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"LandFill Manager Permissions\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://127.0.0.1:8000/rbac/roles/"
+					},
+					"response": []
+				},
+				{
+					"name": "Get all permission of a group",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"permission_id\": 7\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://127.0.0.1:8000/rbac/groups/5/permissions/"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete a permission of a group",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"permission_id\": 7\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://127.0.0.1:8000/rbac/groups/1/permissions/"
+					},
+					"response": []
+				},
+				{
+					"name": "Update a Group by adding permissions",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"permission_ids\": [3, 4]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://127.0.0.1:8000/rbac/groups/5/permissions/"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Users permission by adding in a group",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://127.0.0.1:8000/groups/2/assign-users/3/"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Data Entry Endpoints",
+			"item": [
+				{
+					"name": "List Secondary Transfer Stations:",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://127.0.0.1:8000/secondary-transfer-stations/"
+					},
+					"response": []
+				},
+				{
+					"name": "Create Secondary Transfer Stations",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": "http://127.0.0.1:8000/secondary-transfer-stations/"
+					},
+					"response": []
+				},
+				{
+					"name": "List Landfills",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://127.0.0.1:8000/landfills/"
+					},
+					"response": []
+				},
+				{
+					"name": "Create Landfills",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": "http://127.0.0.1:8000/landfills/"
+					},
+					"response": []
+				},
+				{
+					"name": "List Vehicles",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://127.0.0.1:8000/vehicles/"
+					},
+					"response": []
+				},
+				{
+					"name": "Create Vehicles",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": "http://127.0.0.1:8000/vehicles/"
+					},
+					"response": []
+				},
+				{
+					"name": "List Waste Transfers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://127.0.0.1:8000/waste-transfers/"
+					},
+					"response": []
+				},
+				{
+					"name": "Create Waste Transfers",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": "http://127.0.0.1:8000/waste-transfers/"
+					},
+					"response": []
+				},
+				{
+					"name": "List Oil Allocations",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://127.0.0.1:8000/oil-allocations/"
+					},
+					"response": []
+				},
+				{
+					"name": "Create Oil Allocations",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": "http://127.0.0.1:8000/oil-allocations/"
+					},
+					"response": []
+				},
+				{
+					"name": "List  Billing",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://127.0.0.1:8000/billing/"
+					},
+					"response": []
+				},
+				{
+					"name": "Create Billing",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": "http://127.0.0.1:8000/billing/"
+					},
+					"response": []
+				},
+				{
+					"name": "List Dumping Entries",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://127.0.0.1:8000/dumping-entries/"
+					},
+					"response": []
+				},
+				{
+					"name": "Create Dumping Entries",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": "http://127.0.0.1:8000/dumping-entries/"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
