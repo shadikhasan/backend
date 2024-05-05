@@ -11,13 +11,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get("SECRET_KEY")
+SECRET_KEY = "django-insecure-esb5*y^vu0=yt&git5@9z$%^l7rk=r#cwwho$sr40_1nl53=17"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.environ.get("DEBUG", "False").lower() == "true"
+DEBUG = True
 
-ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS").split(" ")
-
+ALLOWED_HOSTS = []
 # settings.py
 
 AUTH_USER_MODEL = 'ecosync.CustomUser'
@@ -38,6 +37,7 @@ INSTALLED_APPS = [
     'profile_management',
     'rbac',
     'custom_api',
+    'managers',
     'featurs',
 ]
 
@@ -93,8 +93,8 @@ DATABASES = {
     }
 }
 
-database_url = os.environ.get("DATABASES_URL")
-DATABASES['default'] = dj_database_url.parse(database_url)
+# database_url = os.environ.get("DATABASES_URL")
+# DATABASES['default'] = dj_database_url.parse(database_url)
 
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators

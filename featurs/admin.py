@@ -87,13 +87,11 @@ class VehicleAdmin(admin.ModelAdmin):
 @admin.register(SecondaryTransferStation)
 class SecondaryTransferStationAdmin(admin.ModelAdmin):
     search_fields = ['STSID']
-    autocomplete_fields = ['Manager']
     ordering = ['STSID']
     list_display = ['STSID', 'WardNumber', 'Capacity', 'Latitude', 'Longitude', 'CreatedAt', 'UpdatedAt']
 @admin.register(Landfill)
 class LandfillAdmin(admin.ModelAdmin):
     search_fields = ['LandfillID']
-    autocomplete_fields = ['Manager']
     ordering = ['LandfillID']
     list_display = ['LandfillID', 'Name', 'Location', 'Capacity', 'Latitude', 'Longitude',  'CreatedAt', 'UpdatedAt']
 

@@ -12,7 +12,7 @@ class SecondaryTransferStation(models.Model):
     STSID = models.AutoField(primary_key=True)
     WardNumber = models.CharField(max_length=20)
     Location = models.CharField(max_length=255)
-    Manager = models.ForeignKey('ecosync.CustomUser', on_delete=models.CASCADE, blank=True, null=True)
+    #Manager = models.ForeignKey('ecosync.CustomUser', on_delete=models.CASCADE, blank=True, null=True)
     Capacity = models.DecimalField(max_digits=10, decimal_places=2)
     Latitude = models.FloatField(default=0.0)  # Default latitude of the GPS coordinates
     Longitude = models.FloatField(default=0.0) 
@@ -26,7 +26,7 @@ class Landfill(models.Model):
     LandfillID = models.AutoField(primary_key=True)
     Name = models.CharField(max_length=100)
     Location = models.CharField(max_length=255)
-    Manager = models.ForeignKey('ecosync.CustomUser', on_delete=models.CASCADE, blank=True, null=True)
+    #Manager = models.ForeignKey('ecosync.CustomUser', on_delete=models.CASCADE, blank=True, null=True)
     Capacity = models.DecimalField(max_digits=10, decimal_places=2)  # Default capacity of the landfill
     OperationalTimespan = models.CharField(max_length=100, default='24/7')  # Operational timespan of the landfill
     Latitude = models.FloatField(default=0.0)  # Default latitude of the GPS coordinates
