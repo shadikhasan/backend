@@ -101,11 +101,7 @@ class WasteTransferAdmin(admin.ModelAdmin):
     ordering = ['TransferID']
     list_display = ['TransferID', 'Vehicle', 'Source', 'Destination', 'Distance', 'VolumeOfWaste', 'TimeOfArrival', 'TimeOfDeparture', 'CreatedAt', 'UpdatedAt']
     
-@admin.register(OilAllocation)
-class OilAllocationAdmin(admin.ModelAdmin):
-    list_display = ['AllocationID', 'Vehicle', 'WeekNumber', 'VolumeOfWaste', 'OilAllocated', 'CreatedAt', 'UpdatedAt']
-    search_fields = ['Vehicle__registration_number']
-
+    
 @admin.register(Billing)
 class BillingAdmin(admin.ModelAdmin):
     autocomplete_fields = ['Vehicle']
@@ -113,6 +109,7 @@ class BillingAdmin(admin.ModelAdmin):
     readonly_fields = ['calculated_cost']
     actions = [download_pdf]
     ordering = ['BillID']
+    
     
     def cost_per_kilometer(self, obj):
         # Assuming C_unloaded and C_loaded are defined somewhere
@@ -130,7 +127,7 @@ class BillingAdmin(admin.ModelAdmin):
         total_cost = self.cost_per_kilometer(obj) * obj.Distance
         return round(total_cost, 3)
     
-    calculated_cost.short_description = "Oil Allocation (TK)"
+    calculated_cost.short_description = "Oill Allocation (TK)"
     
     
     

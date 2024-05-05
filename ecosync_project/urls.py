@@ -3,6 +3,7 @@ from django.views.generic import RedirectView
 from django.contrib import admin
 from django.urls import path, include
 
+
 admin.site.site_header = 'EcoSync Administration'
 admin.site.index_title = 'Navigation'
 urlpatterns = [

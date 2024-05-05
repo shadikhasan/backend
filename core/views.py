@@ -5,6 +5,7 @@ from rest_framework.permissions import IsAuthenticated
 from django.contrib.auth import authenticate
 from . import serializers
 from . import renderers
+from django.shortcuts import render
 
 # M A N U A L L Y   G E N E R A T E   T O K E N
 from rest_framework_simplejwt.tokens import RefreshToken
@@ -121,3 +122,6 @@ class UserPasswordResetView(APIView):
             )
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
         
+        
+def index(request):
+    return render(request, 'index.html')

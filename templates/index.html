@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secondary Transfer Stations Map</title>
+    <!-- Include Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <style>
+        /* Map container */
+        #map {
+            height: 400px; /* Default height */
+        }
+
+        /* Distance calculator */
+        #distance {
+            font-size: 1.5rem; /* Adjust font size */
+            margin-top: 10px; /* Add some space */
+        }
+
+        /* Responsive styles */
+        @media screen and (max-width: 768px) {
+            /* Adjust map height for smaller screens */
+            #map {
+                height: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="map"></div>
+    <h1 id="distance"></h1> <!-- Add h1 tag to display the distance -->
+
+    <!-- Select elements for choosing wards -->
+    <select id="ward1">
+        <option value="">Select Ward 1</option>
+        <!-- Populate options dynamically using JavaScript -->
+    </select>
+    <select id="ward2">
+        <option value="">Select Ward 2</option>
+        <!-- Populate options dynamically using JavaScript -->
+    </select>
+    <button onclick="calculateDistance()">Calculate Distance</button>
+
+    <!-- Include Leaflet JavaScript -->
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script>
+        // Initialize the map
+        var map = L.map('map'); // Remove setView() to prevent auto centering
+
+        // Add OpenStreetMap tile layer
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+
+        // Sample STS data with real latitude and longitude coordinates
+        var stsData = [
+            { WardNumber: "Ward 1", Location: "Location 1", Latitude: 24.38949, Longitude: 91.16569 },
+            { WardNumber: "Ward 2", Location: "Location 2", Latitude: 23.746466, Longitude: 90.376015 },
+            { WardNumber: "Ward 3", Location: "Location 3", Latitude: 24.403490, Longitude: 90.772301 }
+        ];
+
+        // Add markers for each STS station
+        stsData.forEach(station => {
+            L.marker([station.Latitude, station.Longitude]).addTo(map)
+                .bindPopup(`<b>${station.WardNumber}</b><br>${station.Location}`);
+        });
+
+        // Get LatLng bounds for all markers
+        var bounds = stsData.map(station => L.latLng(station.Latitude, station.Longitude));
+        
+        // Fit the map to the bounds of all markers
+        map.fitBounds(bounds);
+
+        // Function to calculate distance between two points using Haversine formula
+        function calculateDistance() {
+            var ward1Value = document.getElementById("ward1").value;
+            var ward2Value = document.getElementById("ward2").value;
+
+            if (ward1Value && ward2Value) {
+                var ward1 = stsData.find(station => station.WardNumber === ward1Value);
+                var ward2 = stsData.find(station => station.WardNumber === ward2Value);
+
+                // Calculate distance between selected wards
+                var distance = haversineDistance(ward1.Latitude, ward1.Longitude, ward2.Latitude, ward2.Longitude);
+
+                // Display the distance in an h1 tag
+                document.getElementById('distance').textContent = `Distance between ${ward1Value} and ${ward2Value}: ${distance.toFixed(2)} kilometers`;
+            } else {
+                alert("Please select both wards.");
+            }
+        }
+
+        // Function to calculate distance between two points using Haversine formula
+        function haversineDistance(lat1, lon1, lat2, lon2) {
+            const R = 6371e3; // Earth's radius in meters
+            const φ1 = lat1 * Math.PI / 180; // Convert latitude to radians
+            const φ2 = lat2 * Math.PI / 180;
+            const Δφ = (lat2 - lat1) * Math.PI / 180;
+            const Δλ = (lon2 - lon1) * Math.PI / 180;
+
+            const a = Math.sin(Δφ / 2) * Math.sin(Δφ / 2) +
+                      Math.cos(φ1) * Math.cos(φ2) *
+                      Math.sin(Δλ / 2) * Math.sin(Δλ / 2);
+            const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+
+            const distance = R * c; // Distance in meters
+            return distance / 1000; // Convert meters to kilometers
+        }
+
+        // Function to populate select options with ward numbers
+        function populateSelectOptions() {
+            var wardSelect1 = document.getElementById("ward1");
+            var wardSelect2 = document.getElementById("ward2");
+            stsData.forEach(station => {
+                var option1 = document.createElement("option");
+                option1.text = station.WardNumber;
+                option1.value = station.WardNumber;
+                var option2 = document.createElement("option");
+                option2.text = station.WardNumber;
+                option2.value = station.WardNumber;
+                wardSelect1.add(option1);
+                wardSelect2.add(option2);
+            });
+        }
+
+        // Call the function to populate select options
+        populateSelectOptions();
+    </script>
+</body>
+</html>

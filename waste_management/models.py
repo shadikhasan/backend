@@ -87,18 +87,7 @@ class WasteTransfer(models.Model):
         destination_coords = (self.Destination.Latitude, self.Destination.Longitude)
         return geodesic(source_coords, destination_coords).kilometers
 
-    
-class OilAllocation(models.Model):
-    AllocationID = models.AutoField(primary_key=True)
-    Vehicle = models.ForeignKey('Vehicle', on_delete=models.CASCADE)
-    WeekNumber = models.IntegerField()
-    VolumeOfWaste = models.DecimalField(max_digits=10, decimal_places=2)
-    OilAllocated = models.DecimalField(max_digits=10, decimal_places=2)
-    CreatedAt = models.DateTimeField(auto_now_add=True)
-    UpdatedAt = models.DateTimeField(auto_now=True)
 
-    def __str__(self) -> str:
-        return str(self.OilAllocated)
 class Billing(models.Model):
     BillID = models.AutoField(primary_key=True)
     Vehicle = models.ForeignKey('Vehicle', on_delete=models.CASCADE)
@@ -107,6 +96,11 @@ class Billing(models.Model):
     Distance = models.DecimalField(max_digits=10, decimal_places=2)
     CreatedAt = models.DateTimeField(auto_now_add=True)
     UpdatedAt = models.DateTimeField(auto_now=True)
+    
+    
+    class Meta:
+        verbose_name = "Billing / Oill Allocation"
+        verbose_name_plural = "Billings / Oill Allocations"
 
     
 class DumpingEntryRecord(models.Model):
