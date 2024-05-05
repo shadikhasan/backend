@@ -1,9 +1,9 @@
 # ecosync/serializers.py
 
 from rest_framework.serializers import ModelSerializer
-from ecosync.models import CustomUser
+from core.models import CustomUser
 from rest_framework import serializers
-from featurs.models import Role
+from waste_management.models import Role
 class CustomUserSerializer(ModelSerializer):
     role_name = serializers.CharField(source='role.Name', read_only=True)
     class Meta:

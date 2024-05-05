@@ -1,6 +1,6 @@
 from rest_framework import serializers
 from django.contrib.auth.models import Group, Permission
-from ecosync.models import CustomUser as User
+from core.models import CustomUser as User
 class RoleSerializer(serializers.ModelSerializer):
     class Meta:
         model = Group

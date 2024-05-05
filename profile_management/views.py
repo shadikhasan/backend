@@ -2,9 +2,9 @@ from rest_framework.viewsets import ModelViewSet
 from rest_framework import status
 from rest_framework.response import Response
 from rest_framework.decorators import action
-from ecosync.models import *
+from core.models import *
 from rest_framework.views import APIView
-from ecosync.permissions import IsSystemAdmin
+from core.permissions import IsSystemAdmin
 from .serializers import *
 
 class ProfileViewSet(ModelViewSet):

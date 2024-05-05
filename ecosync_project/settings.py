@@ -19,7 +19,7 @@ DEBUG = True
 ALLOWED_HOSTS = []
 # settings.py
 
-AUTH_USER_MODEL = 'ecosync.CustomUser'
+AUTH_USER_MODEL = 'core.CustomUser'
 
 # Application definition
 
@@ -32,13 +32,13 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'corsheaders',
     'rest_framework',
-    'ecosync',
+    'core',
     'user_management',
     'profile_management',
     'rbac',
     'custom_api',
     'managers',
-    'featurs',
+    'waste_management',
 ]
 
 MIDDLEWARE = [

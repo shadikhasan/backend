@@ -1,5 +1,5 @@
 from rest_framework.serializers import ModelSerializer, SerializerMethodField
-from ecosync.models import CustomUser
+from core.models import CustomUser
 
 class ProfileSerializer(ModelSerializer):
     role_name = SerializerMethodField(read_only=True)

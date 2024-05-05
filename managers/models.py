@@ -1,8 +1,8 @@
 from django.db import models
-from featurs.models import *
+from waste_management.models import *
 
 class STSManager(models.Model):
-    user = models.OneToOneField('ecosync.CustomUser', on_delete=models.CASCADE, unique=True)  # Ensure uniqueness of user
+    user = models.OneToOneField('core.CustomUser', on_delete=models.CASCADE, unique=True)  # Ensure uniqueness of user
     sts = models.ForeignKey(SecondaryTransferStation, on_delete=models.CASCADE, related_name='managers', null= True, blank=True)
 
     def __str__(self):
@@ -15,7 +15,7 @@ class STSManager(models.Model):
         super().delete(*args, **kwargs)
 
 class LandfillManager(models.Model):
-    user = models.OneToOneField('ecosync.CustomUser', on_delete=models.CASCADE, unique=True)  # Ensure uniqueness of user
+    user = models.OneToOneField('core.CustomUser', on_delete=models.CASCADE, unique=True)  # Ensure uniqueness of user
     landfill = models.ForeignKey(Landfill, on_delete=models.CASCADE, related_name='managers', null = True, blank = True)
 
     def __str__(self):

@@ -5,13 +5,13 @@ from .serializers import *
 from datetime import datetime, timedelta
 from rest_framework.response import Response
 from rest_framework.views import APIView
-from featurs.models import *
-from ecosync.models import *
+from waste_management.models import *
+from core.models import *
 from django.db import models
 from rest_framework import status
 import requests
 import json
-from ecosync.utils import aws_map_route_api
+from core.utils import aws_map_route_api
 
 class Last7DaysDumpingRecords(generics.ListAPIView):
     serializer_class = DumpingEntryRecordSerializer

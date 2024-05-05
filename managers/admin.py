@@ -1,6 +1,7 @@
 from django.contrib import admin
 from django.core.exceptions import PermissionDenied
 from .models import STSManager, LandfillManager
+from core.models import *
 
 # Define a decorator to prevent adding instances and raise PermissionDenied
 def prevent_adding_permission_denied(model_admin):
@@ -19,6 +20,13 @@ def prevent_adding_permission_denied(model_admin):
 class STSManagerAdmin(admin.ModelAdmin):
     list_display = ['user', 'sts']
 
+    def formfield_for_foreignkey(self, db_field, request, **kwargs):
+        if db_field.name == "user":
+            # Filter the queryset to include only users who are landfill managers
+            kwargs["queryset"] = CustomUser.objects.filter(role_id=2)  # Assuming landfill manager role ID is 2
+        return super().formfield_for_foreignkey(db_field, request, **kwargs)
+
+
     # Override the delete_queryset method to perform custom deletion
     def delete_queryset(self, request, queryset):
         for manager in queryset:
@@ -26,13 +34,19 @@ class STSManagerAdmin(admin.ModelAdmin):
             manager.user.role_id = 4
             manager.user.save()
         super().delete_queryset(request, queryset)
-        
-        
+    
+
 # Register LandfillManager with the admin panel and apply the prevent_adding_permission_denied decorator
 @admin.register(LandfillManager)
 @prevent_adding_permission_denied
 class LandfillManagerAdmin(admin.ModelAdmin):
     list_display = ['user', 'landfill']
+    
+    def formfield_for_foreignkey(self, db_field, request, **kwargs):
+        if db_field.name == "user":
+            # Filter the queryset to include only users who are landfill managers
+            kwargs["queryset"] = CustomUser.objects.filter(role_id=3)  # Assuming landfill manager role ID is 2
+        return super().formfield_for_foreignkey(db_field, request, **kwargs)
     
     # Override the delete_queryset method to perform custom deletion
     def delete_queryset(self, request, queryset):
