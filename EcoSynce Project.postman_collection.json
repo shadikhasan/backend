@@ -2,12 +2,12 @@
 	"info": {
 		"_postman_id": "512b03a9-c77f-4edc-a580-be5c01db8cba",
 		"name": "EcoSynce Project",
-		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "32760727"
 	},
 	"item": [
 		{
-			"name": "User Management Endpoints",
+			"name": "Authentication Endpoints",
 			"item": [
 				{
 					"name": "Login",
@@ -16,17 +16,136 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"username\":\"admin2\",\r\n    \"password\":\"shadik\"\r\n\r\n}",
+							"raw": "{\r\n    \"username\":\"admin2\",\r\n    \"password\":\"admin2\"\r\n\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
 								}
 							}
 						},
-						"url": "http://127.0.0.1:8000/auth/login/"
+						"url": {
+							"raw": "http://127.0.0.1:8000/auth/login/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"auth",
+								"login",
+								""
+							]
+						}
 					},
 					"response": []
 				},
+				{
+					"name": "Reset Password Initiate",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"admin2@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/auth/send-reset-password-email/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"auth",
+								"send-reset-password-email",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Reset Password Confirmation",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"uid\":\"MQ\",\r\n    \"token\":\"bo3ez4-c5a6bbcf2ad17a9db2c102d410c47d5f\",\r\n    \"new_password\":\"jaiho123\",\r\n    \"re_new_password\":\"jaiho123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/auth/reset_password_confirm/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"auth",
+								"reset_password_confirm",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Change Password",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"password\":\"shadik\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/auth/change-password/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"auth",
+								"change-password",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User Management Endpoints",
+			"item": [
 				{
 					"name": "Get all users lists",
 					"protocolProfileBehavior": {
@@ -51,7 +170,20 @@
 								}
 							}
 						},
-						"url": "http://127.0.0.1:8000/users"
+						"url": {
+							"raw": "http://127.0.0.1:8000/users",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"users"
+							]
+						}
 					},
 					"response": []
 				},
@@ -79,7 +211,21 @@
 								}
 							}
 						},
-						"url": "http://127.0.0.1:8000/users/1"
+						"url": {
+							"raw": "http://127.0.0.1:8000/users/1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"users",
+								"1"
+							]
+						}
 					},
 					"response": []
 				},
@@ -90,21 +236,35 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzE0Njg3ODYwLCJpYXQiOjE3MTQ2Nzg4NjAsImp0aSI6IjczYjAzYWRmM2Y2NDRhMmM4MmUzOGE5MGY5ZjExMzJkIiwidXNlcl9pZCI6MX0.BY5-BLJIGk-GQoMS_q_mPE8SMGtRbRzoOoH_iOKB7gI",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzE0OTUyMTgwLCJpYXQiOjE3MTQ5NDMxODAsImp0aSI6IjY3YTNiNjQ3MDUyYTQzYmI5ZDE3NjRlYzk4ZDQ4NDA3IiwidXNlcl9pZCI6MX0.bTELEjmq3eEmzfdSopUJLAOto1SLgC8V9avBK-ziLcA",
 								"type": "default",
 								"uuid": "4d2e11c6-75f8-4dae-b122-f7a93a5f23ea"
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"username\": [\r\n        \"This field is required.\"\r\n    ],\r\n    \"email\": [\r\n        \"This field is required.\"\r\n    ],\r\n    \"password\": [\r\n        \"This field is required.\"\r\n    ]\r\n}",
+							"raw": "{\r\n    \"username\": \"ghalib\",\r\n    \"first_name\": \"\",\r\n    \"last_name\": \"\",\r\n    \"email\": \"ghalib@gmail.com\",\r\n    \"password\": \"1234\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
 								}
 							}
 						},
-						"url": "http://127.0.0.1:8000/users/"
+						"url": {
+							"raw": "http://127.0.0.1:8000/users/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"users",
+								""
+							]
+						}
 					},
 					"response": []
 				},
@@ -129,7 +289,22 @@
 								}
 							}
 						},
-						"url": "http://127.0.0.1:8000/users/2/"
+						"url": {
+							"raw": "http://127.0.0.1:8000/users/2/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"users",
+								"2",
+								""
+							]
+						}
 					},
 					"response": []
 				},
@@ -153,7 +328,22 @@
 								}
 							}
 						},
-						"url": "http://127.0.0.1:8000/users/3/"
+						"url": {
+							"raw": "http://127.0.0.1:8000/users/3/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"users",
+								"3",
+								""
+							]
+						}
 					},
 					"response": []
 				},
@@ -178,7 +368,22 @@
 								}
 							}
 						},
-						"url": "http://127.0.0.1:8000/users/2/"
+						"url": {
+							"raw": "http://127.0.0.1:8000/users/2/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"users",
+								"2",
+								""
+							]
+						}
 					},
 					"response": []
 				},
@@ -194,7 +399,22 @@
 								"uuid": "438caa4a-dbd1-45cf-bdd4-1b422706d9f1"
 							}
 						],
-						"url": "http://127.0.0.1:8000/users/roles/"
+						"url": {
+							"raw": "http://127.0.0.1:8000/users/roles/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"users",
+								"roles",
+								""
+							]
+						}
 					},
 					"response": []
 				},
@@ -210,7 +430,23 @@
 								"uuid": "5745aef9-21f3-4715-98d3-66344ef20541"
 							}
 						],
-						"url": "http://127.0.0.1:8000/users/2/roles/"
+						"url": {
+							"raw": "http://127.0.0.1:8000/users/2/roles/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"users",
+								"2",
+								"roles",
+								""
+							]
+						}
 					},
 					"response": []
 				},
@@ -234,7 +470,23 @@
 								}
 							}
 						},
-						"url": "http://127.0.0.1:8000/users/3/roles/"
+						"url": {
+							"raw": "http://127.0.0.1:8000/users/3/roles/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"users",
+								"3",
+								"roles",
+								""
+							]
+						}
 					},
 					"response": []
 				}
@@ -267,7 +519,20 @@
 								}
 							}
 						},
-						"url": "http://127.0.0.1:8000/profile"
+						"url": {
+							"raw": "http://127.0.0.1:8000/profile",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"profile"
+							]
+						}
 					},
 					"response": []
 				},
@@ -292,7 +557,21 @@
 								}
 							}
 						},
-						"url": "http://127.0.0.1:8000/profile/"
+						"url": {
+							"raw": "http://127.0.0.1:8000/profile/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"profile",
+								""
+							]
+						}
 					},
 					"response": []
 				}
@@ -318,7 +597,22 @@
 								}
 							}
 						},
-						"url": "http://127.0.0.1:8000/rbac/roles/"
+						"url": {
+							"raw": "http://127.0.0.1:8000/rbac/roles/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"rbac",
+								"roles",
+								""
+							]
+						}
 					},
 					"response": []
 				},
@@ -336,7 +630,22 @@
 								}
 							}
 						},
-						"url": "http://127.0.0.1:8000/rbac/roles/"
+						"url": {
+							"raw": "http://127.0.0.1:8000/rbac/roles/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"rbac",
+								"roles",
+								""
+							]
+						}
 					},
 					"response": []
 				},
@@ -357,7 +666,24 @@
 								}
 							}
 						},
-						"url": "http://127.0.0.1:8000/rbac/groups/5/permissions/"
+						"url": {
+							"raw": "http://127.0.0.1:8000/rbac/groups/5/permissions/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"rbac",
+								"groups",
+								"5",
+								"permissions",
+								""
+							]
+						}
 					},
 					"response": []
 				},
@@ -375,7 +701,24 @@
 								}
 							}
 						},
-						"url": "http://127.0.0.1:8000/rbac/groups/1/permissions/"
+						"url": {
+							"raw": "http://127.0.0.1:8000/rbac/groups/1/permissions/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"rbac",
+								"groups",
+								"1",
+								"permissions",
+								""
+							]
+						}
 					},
 					"response": []
 				},
@@ -393,7 +736,24 @@
 								}
 							}
 						},
-						"url": "http://127.0.0.1:8000/rbac/groups/5/permissions/"
+						"url": {
+							"raw": "http://127.0.0.1:8000/rbac/groups/5/permissions/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"rbac",
+								"groups",
+								"5",
+								"permissions",
+								""
+							]
+						}
 					},
 					"response": []
 				},
@@ -411,7 +771,24 @@
 								}
 							}
 						},
-						"url": "http://127.0.0.1:8000/groups/2/assign-users/3/"
+						"url": {
+							"raw": "http://127.0.0.1:8000/groups/2/assign-users/3/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"groups",
+								"2",
+								"assign-users",
+								"3",
+								""
+							]
+						}
 					},
 					"response": []
 				}
@@ -425,7 +802,21 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": "http://127.0.0.1:8000/secondary-transfer-stations/"
+						"url": {
+							"raw": "http://127.0.0.1:8000/secondary-transfer-stations/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"secondary-transfer-stations",
+								""
+							]
+						}
 					},
 					"response": []
 				},
@@ -434,7 +825,21 @@
 					"request": {
 						"method": "POST",
 						"header": [],
-						"url": "http://127.0.0.1:8000/secondary-transfer-stations/"
+						"url": {
+							"raw": "http://127.0.0.1:8000/secondary-transfer-stations/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"secondary-transfer-stations",
+								""
+							]
+						}
 					},
 					"response": []
 				},
@@ -443,7 +848,21 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": "http://127.0.0.1:8000/landfills/"
+						"url": {
+							"raw": "http://127.0.0.1:8000/landfills/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"landfills",
+								""
+							]
+						}
 					},
 					"response": []
 				},
@@ -452,7 +871,21 @@
 					"request": {
 						"method": "POST",
 						"header": [],
-						"url": "http://127.0.0.1:8000/landfills/"
+						"url": {
+							"raw": "http://127.0.0.1:8000/landfills/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"landfills",
+								""
+							]
+						}
 					},
 					"response": []
 				},
@@ -461,7 +894,21 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": "http://127.0.0.1:8000/vehicles/"
+						"url": {
+							"raw": "http://127.0.0.1:8000/vehicles/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"vehicles",
+								""
+							]
+						}
 					},
 					"response": []
 				},
@@ -470,7 +917,21 @@
 					"request": {
 						"method": "POST",
 						"header": [],
-						"url": "http://127.0.0.1:8000/vehicles/"
+						"url": {
+							"raw": "http://127.0.0.1:8000/vehicles/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"vehicles",
+								""
+							]
+						}
 					},
 					"response": []
 				},
@@ -479,7 +940,21 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": "http://127.0.0.1:8000/waste-transfers/"
+						"url": {
+							"raw": "http://127.0.0.1:8000/waste-transfers/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"waste-transfers",
+								""
+							]
+						}
 					},
 					"response": []
 				},
@@ -488,7 +963,21 @@
 					"request": {
 						"method": "POST",
 						"header": [],
-						"url": "http://127.0.0.1:8000/waste-transfers/"
+						"url": {
+							"raw": "http://127.0.0.1:8000/waste-transfers/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"waste-transfers",
+								""
+							]
+						}
 					},
 					"response": []
 				},
@@ -497,7 +986,21 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": "http://127.0.0.1:8000/oil-allocations/"
+						"url": {
+							"raw": "http://127.0.0.1:8000/oil-allocations/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"oil-allocations",
+								""
+							]
+						}
 					},
 					"response": []
 				},
@@ -506,7 +1009,21 @@
 					"request": {
 						"method": "POST",
 						"header": [],
-						"url": "http://127.0.0.1:8000/oil-allocations/"
+						"url": {
+							"raw": "http://127.0.0.1:8000/oil-allocations/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"oil-allocations",
+								""
+							]
+						}
 					},
 					"response": []
 				},
@@ -515,7 +1032,21 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": "http://127.0.0.1:8000/billing/"
+						"url": {
+							"raw": "http://127.0.0.1:8000/billing/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"billing",
+								""
+							]
+						}
 					},
 					"response": []
 				},
@@ -524,7 +1055,21 @@
 					"request": {
 						"method": "POST",
 						"header": [],
-						"url": "http://127.0.0.1:8000/billing/"
+						"url": {
+							"raw": "http://127.0.0.1:8000/billing/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"billing",
+								""
+							]
+						}
 					},
 					"response": []
 				},
@@ -533,7 +1078,21 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": "http://127.0.0.1:8000/dumping-entries/"
+						"url": {
+							"raw": "http://127.0.0.1:8000/dumping-entries/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"dumping-entries",
+								""
+							]
+						}
 					},
 					"response": []
 				},
@@ -542,7 +1101,21 @@
 					"request": {
 						"method": "POST",
 						"header": [],
-						"url": "http://127.0.0.1:8000/dumping-entries/"
+						"url": {
+							"raw": "http://127.0.0.1:8000/dumping-entries/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"dumping-entries",
+								""
+							]
+						}
 					},
 					"response": []
 				}
