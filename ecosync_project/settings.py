@@ -16,7 +16,7 @@ SECRET_KEY = "django-insecure-esb5*y^vu0=yt&git5@9z$%^l7rk=r#cwwho$sr40_1nl53=17
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['a24d-103-231-163-239.ngrok-free.app', '127.0.0.1']
 # settings.py
 
 AUTH_USER_MODEL = 'core.CustomUser'
@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'custom_api',
     'managers',
     'waste_management',
+    'data_entry',
 ]
 
 MIDDLEWARE = [
@@ -183,6 +184,7 @@ SIMPLE_JWT = {
     "SLIDING_TOKEN_REFRESH_SERIALIZER": "rest_framework_simplejwt.serializers.TokenRefreshSlidingSerializer",
 }
 
+CSRF_TRUSTED_ORIGINS = ['https://0863-103-231-163-238.ngrok-free.app']
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173",

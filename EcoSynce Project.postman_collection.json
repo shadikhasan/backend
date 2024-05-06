@@ -158,7 +158,7 @@
 								"key": "Authorization",
 								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzE0Njg3ODYwLCJpYXQiOjE3MTQ2Nzg4NjAsImp0aSI6IjczYjAzYWRmM2Y2NDRhMmM4MmUzOGE5MGY5ZjExMzJkIiwidXNlcl9pZCI6MX0.BY5-BLJIGk-GQoMS_q_mPE8SMGtRbRzoOoH_iOKB7gI",
 								"type": "default",
-								"uuid": "894a32a7-6a5f-493e-9cb6-26c41b5b36a5"
+								"uuid": "5e0ebdcf-10ac-4ad7-b409-88a5797e53dc"
 							}
 						],
 						"body": {
@@ -199,7 +199,7 @@
 								"key": "Authorization",
 								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzE0Njg3ODYwLCJpYXQiOjE3MTQ2Nzg4NjAsImp0aSI6IjczYjAzYWRmM2Y2NDRhMmM4MmUzOGE5MGY5ZjExMzJkIiwidXNlcl9pZCI6MX0.BY5-BLJIGk-GQoMS_q_mPE8SMGtRbRzoOoH_iOKB7gI",
 								"type": "default",
-								"uuid": "c9e80f94-97f7-4a9a-bc85-7a3f7a0d2494"
+								"uuid": "cc28c0fa-e37e-4d1e-8225-19e7ff0adcda"
 							}
 						],
 						"body": {
@@ -237,8 +237,7 @@
 							{
 								"key": "Authorization",
 								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzE0OTUyMTgwLCJpYXQiOjE3MTQ5NDMxODAsImp0aSI6IjY3YTNiNjQ3MDUyYTQzYmI5ZDE3NjRlYzk4ZDQ4NDA3IiwidXNlcl9pZCI6MX0.bTELEjmq3eEmzfdSopUJLAOto1SLgC8V9avBK-ziLcA",
-								"type": "default",
-								"uuid": "4d2e11c6-75f8-4dae-b122-f7a93a5f23ea"
+								"uuid": "7e1a6dc7-c116-4e27-9033-2a85c31b9c4d"
 							}
 						],
 						"body": {
@@ -277,7 +276,7 @@
 								"key": "Authorization",
 								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzE0Njg3ODYwLCJpYXQiOjE3MTQ2Nzg4NjAsImp0aSI6IjczYjAzYWRmM2Y2NDRhMmM4MmUzOGE5MGY5ZjExMzJkIiwidXNlcl9pZCI6MX0.BY5-BLJIGk-GQoMS_q_mPE8SMGtRbRzoOoH_iOKB7gI",
 								"type": "default",
-								"uuid": "6cec3983-1cb7-47f6-b686-f644006f6f37"
+								"uuid": "f4919968-47ab-4304-960d-88410a7b1c21"
 							}
 						],
 						"body": {
@@ -316,7 +315,7 @@
 							{
 								"key": "Authorization",
 								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzE0NzU5NzU5LCJpYXQiOjE3MTQ3NTA3NTksImp0aSI6IjlmZjMwNzQ5ZmQwNzQ3NGE4NGZmMTgwYTAzNjdmODQxIiwidXNlcl9pZCI6MX0.3WB5UV_U5Llr-ZM4eEDrHaN-5kUk-Jh1enukAzsgmz8",
-								"uuid": "ccd03ae0-359c-4c2b-b6d5-8e8471a7def3"
+								"uuid": "ad6fd150-5992-4a81-b1c8-dabb0557af41"
 							}
 						],
 						"body": {
@@ -356,7 +355,7 @@
 								"key": "Authorization",
 								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzE0Njg3ODYwLCJpYXQiOjE3MTQ2Nzg4NjAsImp0aSI6IjczYjAzYWRmM2Y2NDRhMmM4MmUzOGE5MGY5ZjExMzJkIiwidXNlcl9pZCI6MX0.BY5-BLJIGk-GQoMS_q_mPE8SMGtRbRzoOoH_iOKB7gI",
 								"type": "default",
-								"uuid": "8691eee4-24d2-41db-9db9-a6390980902b"
+								"uuid": "3470ffa3-b79d-4009-b755-b126f0ddd4f6"
 							}
 						],
 						"body": {
@@ -396,7 +395,7 @@
 								"key": "Authorization",
 								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzE0Njg3ODYwLCJpYXQiOjE3MTQ2Nzg4NjAsImp0aSI6IjczYjAzYWRmM2Y2NDRhMmM4MmUzOGE5MGY5ZjExMzJkIiwidXNlcl9pZCI6MX0.BY5-BLJIGk-GQoMS_q_mPE8SMGtRbRzoOoH_iOKB7gI",
 								"type": "default",
-								"uuid": "438caa4a-dbd1-45cf-bdd4-1b422706d9f1"
+								"uuid": "4376d808-167e-43d3-b51b-9fa32715374f"
 							}
 						],
 						"url": {
@@ -427,7 +426,7 @@
 								"key": "Authorization",
 								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzE0Njg3ODYwLCJpYXQiOjE3MTQ2Nzg4NjAsImp0aSI6IjczYjAzYWRmM2Y2NDRhMmM4MmUzOGE5MGY5ZjExMzJkIiwidXNlcl9pZCI6MX0.BY5-BLJIGk-GQoMS_q_mPE8SMGtRbRzoOoH_iOKB7gI",
 								"type": "default",
-								"uuid": "5745aef9-21f3-4715-98d3-66344ef20541"
+								"uuid": "a406b581-1b9b-4488-8f7f-306b679e1d26"
 							}
 						],
 						"url": {
@@ -458,7 +457,7 @@
 							{
 								"key": "Authorization",
 								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzE0NzYxMzc2LCJpYXQiOjE3MTQ3NTIzNzYsImp0aSI6IjgyNTAzOTM1NGJhNDRkZDBiNGJmZjM3ZmU1OThlZGFlIiwidXNlcl9pZCI6MX0.08BsgeSrhV_U8ZlP_WnGe7pCAdFMj6SAsbI9XhYrrjk",
-								"uuid": "27d38042-0e12-4727-bfca-801a276abcda"
+								"uuid": "0f9a67ef-a334-4488-850a-44d1fa0bc46d"
 							}
 						],
 						"body": {
@@ -507,7 +506,7 @@
 								"key": "Authorization",
 								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzE0Njg5NzYzLCJpYXQiOjE3MTQ2ODA3NjMsImp0aSI6IjE2Y2MxN2JlNWYxNzQ5NmU5NzU5MTg0MzY1OWM3Y2RhIiwidXNlcl9pZCI6M30.GDKZMz6SLL6ZRj2KJzH8b4OY8SJhot9QLWdCvLr-glQ",
 								"type": "default",
-								"uuid": "cb07f1f1-3d30-43a9-ad44-2d28f059ad18"
+								"uuid": "76de4b11-b785-49fd-9e20-4b84a379b9e0"
 							}
 						],
 						"body": {
@@ -545,7 +544,45 @@
 								"key": "Authorization",
 								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzE0Njg5NzYzLCJpYXQiOjE3MTQ2ODA3NjMsImp0aSI6IjE2Y2MxN2JlNWYxNzQ5NmU5NzU5MTg0MzY1OWM3Y2RhIiwidXNlcl9pZCI6M30.GDKZMz6SLL6ZRj2KJzH8b4OY8SJhot9QLWdCvLr-glQ",
 								"type": "default",
-								"uuid": "a3461422-fda3-4a52-9de7-baa312cfb8e2"
+								"uuid": "8adfcf62-efbe-4d84-8cee-065062d1c29d"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"shadik2\",\r\n    \"first_name\": \"shadik\",\r\n    \"last_name\": \"tonni\",\r\n    \"email\": \"shadik@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/profile/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"profile",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Profile Partial",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzE0Njg5NzYzLCJpYXQiOjE3MTQ2ODA3NjMsImp0aSI6IjE2Y2MxN2JlNWYxNzQ5NmU5NzU5MTg0MzY1OWM3Y2RhIiwidXNlcl9pZCI6M30.GDKZMz6SLL6ZRj2KJzH8b4OY8SJhot9QLWdCvLr-glQ",
+								"uuid": "4c247d96-c5a6-4933-be2e-689027271696"
 							}
 						],
 						"body": {
@@ -982,102 +1019,16 @@
 					"response": []
 				},
 				{
-					"name": "List Oil Allocations",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "http://127.0.0.1:8000/oil-allocations/",
-							"protocol": "http",
-							"host": [
-								"127",
-								"0",
-								"0",
-								"1"
-							],
-							"port": "8000",
-							"path": [
-								"oil-allocations",
-								""
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Create Oil Allocations",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"url": {
-							"raw": "http://127.0.0.1:8000/oil-allocations/",
-							"protocol": "http",
-							"host": [
-								"127",
-								"0",
-								"0",
-								"1"
-							],
-							"port": "8000",
-							"path": [
-								"oil-allocations",
-								""
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "List  Billing",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "http://127.0.0.1:8000/billing/",
-							"protocol": "http",
-							"host": [
-								"127",
-								"0",
-								"0",
-								"1"
-							],
-							"port": "8000",
-							"path": [
-								"billing",
-								""
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Create Billing",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"url": {
-							"raw": "http://127.0.0.1:8000/billing/",
-							"protocol": "http",
-							"host": [
-								"127",
-								"0",
-								"0",
-								"1"
-							],
-							"port": "8000",
-							"path": [
-								"billing",
-								""
-							]
-						}
-					},
-					"response": []
-				},
-				{
 					"name": "List Dumping Entries",
 					"request": {
 						"method": "GET",
-						"header": [],
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzE1MDIzNjc3LCJpYXQiOjE3MTUwMTQ2NzcsImp0aSI6IjRhMjllZjFjMDBhYjRkZmRhMDRkYTdiOTgyNDc0MWUzIiwidXNlcl9pZCI6M30.fC7IrLrX1-v6199W691ZZ5DrYhgQlIDCvEL8D3uZmZE",
+								"uuid": "1e7ffd46-98bd-4df9-98f7-64bb11cf2b17"
+							}
+						],
 						"url": {
 							"raw": "http://127.0.0.1:8000/dumping-entries/",
 							"protocol": "http",
@@ -1113,6 +1064,163 @@
 							"port": "8000",
 							"path": [
 								"dumping-entries",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Custom Api",
+			"item": [
+				{
+					"name": "total-dumping-records",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/total-dumping-records/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"total-dumping-records",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "last-7-days-dumping-records",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/last-7-days-dumping-records/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"last-7-days-dumping-records",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "landfill-waste-capacity",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/landfill-waste-capacity/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"landfill-waste-capacity",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "vehicle-summary",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/vehicle-summary/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"vehicle-summary",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "user-summary",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/user-summary/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"user-summary",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Map Endpoints",
+			"item": [
+				{
+					"name": "Finding route",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"source_lat\": 24.375389,\r\n    \"source_lon\": 88.602569,\r\n    \"dest_lat\": 24.377813,\r\n    \"dest_lon\": 88.567937,\r\n    \"optimize_for\": \"FastestRoute\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/route/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"route",
 								""
 							]
 						}

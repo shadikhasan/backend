@@ -14,11 +14,11 @@ class WasteTransferSerializer(serializers.ModelSerializer):
     def get_ShortestRoute(self, obj):
         source = obj.Source
         destination = obj.Destination
-        shortest_route = aws_map_route_api(source.latitude, source.longitude, destination.latitude, destination.longitude, 'ShortestRoute')
+        shortest_route = aws_map_route_api(source.Latitude, source.Longitude, destination.Latitude, destination.Longitude, 'ShortestRoute')
         return shortest_route
 
     def get_FastestRoute(self, obj):
         source = obj.Source
         destination = obj.Destination
-        fastest_route = aws_map_route_api(source.latitude, source.longitude, destination.latitude, destination.longitude, 'FastestRoute')
+        fastest_route = aws_map_route_api(source.Latitude, source.Longitude, destination.Latitude, destination.Longitude, 'FastestRoute')
         return fastest_route

@@ -88,30 +88,23 @@ class WasteTransfer(models.Model):
         return geodesic(source_coords, destination_coords).kilometers
 
 
-class Billing(models.Model):
-    BillID = models.AutoField(primary_key=True)
-    Vehicle = models.ForeignKey('Vehicle', on_delete=models.CASCADE)
-    WeekNumber = models.IntegerField()
-    VolumeOfWaste = models.DecimalField(max_digits=10, decimal_places=2, verbose_name='VolumeOfWaste')
-    Distance = models.DecimalField(max_digits=10, decimal_places=2)
-    CreatedAt = models.DateTimeField(auto_now_add=True)
-    UpdatedAt = models.DateTimeField(auto_now=True)
-    
-    
-    class Meta:
-        verbose_name = "Billing / Oill Allocation"
-        verbose_name_plural = "Billings / Oill Allocations"
 
     
 class DumpingEntryRecord(models.Model):
     EntryID = models.AutoField(primary_key=True)
     Vehicle = models.ForeignKey('Vehicle', on_delete=models.CASCADE)
+    SecondaryTransferStation = models.ForeignKey('SecondaryTransferStation', on_delete=models.CASCADE, default=3)
     Landfill = models.ForeignKey('Landfill', on_delete=models.CASCADE)
     VolumeOfWaste = models.DecimalField(max_digits=10, decimal_places=2)
+    Distance = models.DecimalField(max_digits=10, decimal_places=2, default=0)
     TimeOfArrival = models.DateTimeField()
     TimeOfDeparture = models.DateTimeField()
     CreatedAt = models.DateTimeField(auto_now_add=True)
     UpdatedAt = models.DateTimeField(auto_now=True)
+    
+    class Meta:
+        verbose_name = "Dumping Entry / Oill Allocation(Billing)"
+        verbose_name_plural = "Dumping Entrys / Oill Allocations (Billings)"
 
     
 class Role(models.Model):

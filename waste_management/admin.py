@@ -21,7 +21,7 @@ def download_pdf(self, request, queryset):
     pdf.drawString(250, 650, title_text)  # Draw the title at specified position
 
 
-    excluded_fields = ['CreatedAt', 'UpdatedAt']
+    excluded_fields = ['CreatedAt', 'UpdatedAt', 'TimeOfArrival', 'TimeOfDeparture']
     headers = [field.verbose_name for field in self.model._meta.fields if field.name not in excluded_fields]
     vehicle_headers = [field.verbose_name for field in Vehicle._meta.fields if field.name not in excluded_fields]
     data = [headers]
@@ -67,7 +67,7 @@ def download_pdf(self, request, queryset):
     canvas_width = 800
     canvas_height = 600
     table.wrapOn(pdf, canvas_width, canvas_height)
-    table.drawOn(pdf, 45, canvas_height - len(data) * 20)
+    table.drawOn(pdf, 0, canvas_height - len(data) * 20)
 
     pdf.save()
     return response
@@ -102,13 +102,13 @@ class WasteTransferAdmin(admin.ModelAdmin):
     list_display = ['TransferID', 'Vehicle', 'Source', 'Destination', 'Distance', 'VolumeOfWaste', 'TimeOfArrival', 'TimeOfDeparture', 'CreatedAt', 'UpdatedAt']
     
     
-@admin.register(Billing)
-class BillingAdmin(admin.ModelAdmin):
+@admin.register(DumpingEntryRecord)
+class DumpingEntryRecordAdmin(admin.ModelAdmin):
     autocomplete_fields = ['Vehicle']
-    list_display = ['BillID', 'Vehicle', 'calculated_cost', 'WeekNumber', 'VolumeOfWaste', 'Distance', 'CreatedAt', 'UpdatedAt']
+    list_display = ['EntryID', 'Vehicle', 'calculated_cost', 'SecondaryTransferStation', 'Landfill', 'VolumeOfWaste', 'TimeOfArrival', 'TimeOfDeparture', 'CreatedAt', 'UpdatedAt']
+
     readonly_fields = ['calculated_cost']
     actions = [download_pdf]
-    ordering = ['BillID']
     
     
     def cost_per_kilometer(self, obj):
@@ -128,15 +128,6 @@ class BillingAdmin(admin.ModelAdmin):
         return round(total_cost, 3)
     
     calculated_cost.short_description = "Oill Allocation (TK)"
-    
-    
-    
-    
-@admin.register(DumpingEntryRecord)
-class DumpingEntryRecordAdmin(admin.ModelAdmin):
-    autocomplete_fields = ['Vehicle']
-    list_display = ['EntryID', 'Vehicle', 'Landfill', 'VolumeOfWaste', 'TimeOfArrival', 'TimeOfDeparture', 'CreatedAt', 'UpdatedAt']
-
 
 @admin.register(Role)
 class RoleAdmin(admin.ModelAdmin):
