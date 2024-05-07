@@ -97,8 +97,8 @@ class DumpingEntryRecord(models.Model):
     Landfill = models.ForeignKey('Landfill', on_delete=models.CASCADE)
     VolumeOfWaste = models.DecimalField(max_digits=10, decimal_places=2)
     Distance = models.DecimalField(max_digits=10, decimal_places=2, default=0)
-    TimeOfArrival = models.DateTimeField()
-    TimeOfDeparture = models.DateTimeField()
+    TimeOfArrival = models.DateTimeField(blank=True, null=True)
+    TimeOfDeparture = models.DateTimeField(blank=True, null=True)
     CreatedAt = models.DateTimeField(auto_now_add=True)
     UpdatedAt = models.DateTimeField(auto_now=True)
     

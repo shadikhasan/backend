@@ -158,7 +158,7 @@
 								"key": "Authorization",
 								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzE0Njg3ODYwLCJpYXQiOjE3MTQ2Nzg4NjAsImp0aSI6IjczYjAzYWRmM2Y2NDRhMmM4MmUzOGE5MGY5ZjExMzJkIiwidXNlcl9pZCI6MX0.BY5-BLJIGk-GQoMS_q_mPE8SMGtRbRzoOoH_iOKB7gI",
 								"type": "default",
-								"uuid": "5e0ebdcf-10ac-4ad7-b409-88a5797e53dc"
+								"uuid": "90a0e156-240d-4b85-b066-2efbcdb041a1"
 							}
 						],
 						"body": {
@@ -199,7 +199,7 @@
 								"key": "Authorization",
 								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzE0Njg3ODYwLCJpYXQiOjE3MTQ2Nzg4NjAsImp0aSI6IjczYjAzYWRmM2Y2NDRhMmM4MmUzOGE5MGY5ZjExMzJkIiwidXNlcl9pZCI6MX0.BY5-BLJIGk-GQoMS_q_mPE8SMGtRbRzoOoH_iOKB7gI",
 								"type": "default",
-								"uuid": "cc28c0fa-e37e-4d1e-8225-19e7ff0adcda"
+								"uuid": "bfcbbafa-b534-43da-9c2b-d62920a898a6"
 							}
 						],
 						"body": {
@@ -237,7 +237,7 @@
 							{
 								"key": "Authorization",
 								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzE0OTUyMTgwLCJpYXQiOjE3MTQ5NDMxODAsImp0aSI6IjY3YTNiNjQ3MDUyYTQzYmI5ZDE3NjRlYzk4ZDQ4NDA3IiwidXNlcl9pZCI6MX0.bTELEjmq3eEmzfdSopUJLAOto1SLgC8V9avBK-ziLcA",
-								"uuid": "7e1a6dc7-c116-4e27-9033-2a85c31b9c4d"
+								"uuid": "a48a21e1-38ab-4b8f-b874-9b5c8f09807e"
 							}
 						],
 						"body": {
@@ -276,7 +276,7 @@
 								"key": "Authorization",
 								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzE0Njg3ODYwLCJpYXQiOjE3MTQ2Nzg4NjAsImp0aSI6IjczYjAzYWRmM2Y2NDRhMmM4MmUzOGE5MGY5ZjExMzJkIiwidXNlcl9pZCI6MX0.BY5-BLJIGk-GQoMS_q_mPE8SMGtRbRzoOoH_iOKB7gI",
 								"type": "default",
-								"uuid": "f4919968-47ab-4304-960d-88410a7b1c21"
+								"uuid": "3e9eccf2-5d32-4d0f-90a8-f15da6bdc1da"
 							}
 						],
 						"body": {
@@ -315,7 +315,7 @@
 							{
 								"key": "Authorization",
 								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzE0NzU5NzU5LCJpYXQiOjE3MTQ3NTA3NTksImp0aSI6IjlmZjMwNzQ5ZmQwNzQ3NGE4NGZmMTgwYTAzNjdmODQxIiwidXNlcl9pZCI6MX0.3WB5UV_U5Llr-ZM4eEDrHaN-5kUk-Jh1enukAzsgmz8",
-								"uuid": "ad6fd150-5992-4a81-b1c8-dabb0557af41"
+								"uuid": "9c5b35be-148e-4070-888d-cad0d24c1df1"
 							}
 						],
 						"body": {
@@ -355,7 +355,7 @@
 								"key": "Authorization",
 								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzE0Njg3ODYwLCJpYXQiOjE3MTQ2Nzg4NjAsImp0aSI6IjczYjAzYWRmM2Y2NDRhMmM4MmUzOGE5MGY5ZjExMzJkIiwidXNlcl9pZCI6MX0.BY5-BLJIGk-GQoMS_q_mPE8SMGtRbRzoOoH_iOKB7gI",
 								"type": "default",
-								"uuid": "3470ffa3-b79d-4009-b755-b126f0ddd4f6"
+								"uuid": "51977bf4-8590-48bb-80f8-3d70a24adf6b"
 							}
 						],
 						"body": {
@@ -395,7 +395,7 @@
 								"key": "Authorization",
 								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzE0Njg3ODYwLCJpYXQiOjE3MTQ2Nzg4NjAsImp0aSI6IjczYjAzYWRmM2Y2NDRhMmM4MmUzOGE5MGY5ZjExMzJkIiwidXNlcl9pZCI6MX0.BY5-BLJIGk-GQoMS_q_mPE8SMGtRbRzoOoH_iOKB7gI",
 								"type": "default",
-								"uuid": "4376d808-167e-43d3-b51b-9fa32715374f"
+								"uuid": "01947256-89f6-4598-854b-5378f5ac8f98"
 							}
 						],
 						"url": {
@@ -426,7 +426,7 @@
 								"key": "Authorization",
 								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzE0Njg3ODYwLCJpYXQiOjE3MTQ2Nzg4NjAsImp0aSI6IjczYjAzYWRmM2Y2NDRhMmM4MmUzOGE5MGY5ZjExMzJkIiwidXNlcl9pZCI6MX0.BY5-BLJIGk-GQoMS_q_mPE8SMGtRbRzoOoH_iOKB7gI",
 								"type": "default",
-								"uuid": "a406b581-1b9b-4488-8f7f-306b679e1d26"
+								"uuid": "8669d588-3a5c-4b83-9a4a-68f4f9245f55"
 							}
 						],
 						"url": {
@@ -457,7 +457,7 @@
 							{
 								"key": "Authorization",
 								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzE0NzYxMzc2LCJpYXQiOjE3MTQ3NTIzNzYsImp0aSI6IjgyNTAzOTM1NGJhNDRkZDBiNGJmZjM3ZmU1OThlZGFlIiwidXNlcl9pZCI6MX0.08BsgeSrhV_U8ZlP_WnGe7pCAdFMj6SAsbI9XhYrrjk",
-								"uuid": "0f9a67ef-a334-4488-850a-44d1fa0bc46d"
+								"uuid": "79dc18c3-edf4-4965-ae1b-ff374dd5d3c2"
 							}
 						],
 						"body": {
@@ -506,7 +506,7 @@
 								"key": "Authorization",
 								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzE0Njg5NzYzLCJpYXQiOjE3MTQ2ODA3NjMsImp0aSI6IjE2Y2MxN2JlNWYxNzQ5NmU5NzU5MTg0MzY1OWM3Y2RhIiwidXNlcl9pZCI6M30.GDKZMz6SLL6ZRj2KJzH8b4OY8SJhot9QLWdCvLr-glQ",
 								"type": "default",
-								"uuid": "76de4b11-b785-49fd-9e20-4b84a379b9e0"
+								"uuid": "c7f07eb8-eead-4c30-8845-5db15345c07e"
 							}
 						],
 						"body": {
@@ -544,7 +544,7 @@
 								"key": "Authorization",
 								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzE0Njg5NzYzLCJpYXQiOjE3MTQ2ODA3NjMsImp0aSI6IjE2Y2MxN2JlNWYxNzQ5NmU5NzU5MTg0MzY1OWM3Y2RhIiwidXNlcl9pZCI6M30.GDKZMz6SLL6ZRj2KJzH8b4OY8SJhot9QLWdCvLr-glQ",
 								"type": "default",
-								"uuid": "8adfcf62-efbe-4d84-8cee-065062d1c29d"
+								"uuid": "9c6c1896-3bc3-4009-b29d-1c6485114665"
 							}
 						],
 						"body": {
@@ -582,7 +582,7 @@
 							{
 								"key": "Authorization",
 								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzE0Njg5NzYzLCJpYXQiOjE3MTQ2ODA3NjMsImp0aSI6IjE2Y2MxN2JlNWYxNzQ5NmU5NzU5MTg0MzY1OWM3Y2RhIiwidXNlcl9pZCI6M30.GDKZMz6SLL6ZRj2KJzH8b4OY8SJhot9QLWdCvLr-glQ",
-								"uuid": "4c247d96-c5a6-4933-be2e-689027271696"
+								"uuid": "81c77edb-10f2-4162-a75c-e16079127954"
 							}
 						],
 						"body": {
@@ -976,7 +976,13 @@
 					"name": "List Waste Transfers",
 					"request": {
 						"method": "GET",
-						"header": [],
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzE1MDIzNjc3LCJpYXQiOjE3MTUwMTQ2NzcsImp0aSI6IjRhMjllZjFjMDBhYjRkZmRhMDRkYTdiOTgyNDc0MWUzIiwidXNlcl9pZCI6M30.fC7IrLrX1-v6199W691ZZ5DrYhgQlIDCvEL8D3uZmZE",
+								"uuid": "146f46eb-bf40-4d91-a28a-ec97cc6437be"
+							}
+						],
 						"url": {
 							"raw": "http://127.0.0.1:8000/waste-transfers/",
 							"protocol": "http",
@@ -1025,12 +1031,12 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzE1MDIzNjc3LCJpYXQiOjE3MTUwMTQ2NzcsImp0aSI6IjRhMjllZjFjMDBhYjRkZmRhMDRkYTdiOTgyNDc0MWUzIiwidXNlcl9pZCI6M30.fC7IrLrX1-v6199W691ZZ5DrYhgQlIDCvEL8D3uZmZE",
-								"uuid": "1e7ffd46-98bd-4df9-98f7-64bb11cf2b17"
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzE1MDgyMTg1LCJpYXQiOjE3MTUwNzMxODUsImp0aSI6Ijg2ZjFiOWJjZGU0NzQ2YzM5ZjZhODFjYjM0NDU0MDViIiwidXNlcl9pZCI6M30.MgjgAPrrqwnYfFO7fuhoJAvrivhZrX0cfhodzB0kiro",
+								"uuid": "61f46640-e415-488f-a2ea-a9340de5e05b"
 							}
 						],
 						"url": {
-							"raw": "http://127.0.0.1:8000/dumping-entries/",
+							"raw": "http://127.0.0.1:8000/dumping-entries/21",
 							"protocol": "http",
 							"host": [
 								"127",
@@ -1041,7 +1047,7 @@
 							"port": "8000",
 							"path": [
 								"dumping-entries",
-								""
+								"21"
 							]
 						}
 					},
@@ -1051,7 +1057,22 @@
 					"name": "Create Dumping Entries",
 					"request": {
 						"method": "POST",
-						"header": [],
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzE1MDgyMTg1LCJpYXQiOjE3MTUwNzMxODUsImp0aSI6Ijg2ZjFiOWJjZGU0NzQ2YzM5ZjZhODFjYjM0NDU0MDViIiwidXNlcl9pZCI6M30.MgjgAPrrqwnYfFO7fuhoJAvrivhZrX0cfhodzB0kiro",
+								"uuid": "600d9611-af0b-464d-8849-203070425b66"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Vehicle\": 1,\r\n    \"SecondaryTransferStation\": 3,\r\n    \"Landfill\": 2,\r\n    \"VolumeOfWaste\": \"50.00\",\r\n    \"Distance\": \"50.00\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": {
 							"raw": "http://127.0.0.1:8000/dumping-entries/",
 							"protocol": "http",
