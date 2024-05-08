@@ -3,129 +3,116 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Secondary Transfer Stations Map</title>
+    <title>Transfer Stations and Landfills Map</title>
     <!-- Include Leaflet CSS -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
     <style>
         /* Map container */
         #map {
-            height: 400px; /* Default height */
+            height: 600px; /* Adjust map height */
         }
-
-        /* Distance calculator */
-        #distance {
-            font-size: 1.5rem; /* Adjust font size */
-            margin-top: 10px; /* Add some space */
+        /* Icon legend container */
+        #icon-legend {
+            margin-top: 10px;
+            text-align: left;
         }
-
-        /* Responsive styles */
-        @media screen and (max-width: 768px) {
-            /* Adjust map height for smaller screens */
-            #map {
-                height: 300px;
-            }
+        /* Icon legend items */
+        .legend-item {
+            display: block;
+            margin-bottom: 10px;
+        }
+        .legend-item img {
+            width: 32px;
+            height: 32px;
+            margin-right: 5px;
         }
     </style>
 </head>
 <body>
     <div id="map"></div>
-    <h1 id="distance"></h1> <!-- Add h1 tag to display the distance -->
 
-    <!-- Select elements for choosing wards -->
-    <select id="ward1">
-        <option value="">Select Ward 1</option>
-        <!-- Populate options dynamically using JavaScript -->
-    </select>
-    <select id="ward2">
-        <option value="">Select Ward 2</option>
-        <!-- Populate options dynamically using JavaScript -->
-    </select>
-    <button onclick="calculateDistance()">Calculate Distance</button>
+    <!-- Icon legend -->
+    <div id="icon-legend">
+        <div class="legend-item">
+            <img src="https://img.icons8.com/color/48/000000/waste.png" alt="Transfer Station Icon">
+            Secondary Transfer Stations
+        </div>
+        <div class="legend-item">
+            <img src="https://img.icons8.com/ios-filled/50/000000/trash.png" alt="Landfill Icon">
+            Landfills
+        </div>
+    </div>
 
     <!-- Include Leaflet JavaScript -->
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
     <script>
-        // Initialize the map
-        var map = L.map('map'); // Remove setView() to prevent auto centering
+        var map = L.map('map').setView([23.909891, 90.402889], 11); // Centered around Dhaka, Bangladesh
 
         // Add OpenStreetMap tile layer
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         }).addTo(map);
 
-        // Sample STS data with real latitude and longitude coordinates
-        var stsData = [
-            { WardNumber: "Ward 1", Location: "Location 1", Latitude: 24.38949, Longitude: 91.16569 },
-            { WardNumber: "Ward 2", Location: "Location 2", Latitude: 23.746466, Longitude: 90.376015 },
-            { WardNumber: "Ward 3", Location: "Location 3", Latitude: 24.403490, Longitude: 90.772301 }
-        ];
-
-        // Add markers for each STS station
-        stsData.forEach(station => {
-            L.marker([station.Latitude, station.Longitude]).addTo(map)
-                .bindPopup(`<b>${station.WardNumber}</b><br>${station.Location}`);
+        // Define custom icons for transfer stations and landfills
+        var transferStationIcon = L.icon({
+            iconUrl: 'https://img.icons8.com/color/48/000000/waste.png',
+            iconSize: [48, 48], // Adjust icon size
+            iconAnchor: [24, 48] // Adjust icon anchor
         });
 
-        // Get LatLng bounds for all markers
-        var bounds = stsData.map(station => L.latLng(station.Latitude, station.Longitude));
+        var landfillIcon = L.icon({
+            iconUrl: 'https://img.icons8.com/ios-filled/50/000000/trash.png',
+            iconSize: [50, 50], // Adjust icon size
+            iconAnchor: [25, 50] // Adjust icon anchor
+        });
+
+       // Add transfer stations
+        var transferStations = [
+                { Location: "Section-12, Kabarsthan, Uttara STS", Latitude: 23.871424189, Longitude: 90.380003352, Capacity: 950 },
+                { Location: "sector-6, Uttara STS", Latitude: 23.871154642, Longitude: 90.400978342, Capacity: 800 },
+                { Location: "Ranabhola, Section-10, Uttara STS", Latitude: 23.885290574, Longitude: 90.38649071, Capacity: 750 },
+                { Location: "Kuril Bishwa Road STS", Latitude: 23.82374075, Longitude: 90.421449837, Capacity: 900 },
+                { Location: "Nikunja-2, West Side Road-18 STS", Latitude: 23.832563077, Longitude: 90.417706771, Capacity: 850 },
+                { Location: "KhilkhetRailgate STS", Latitude: 23.829193029, Longitude: 90.420268179, Capacity: 700 },
+                { Location: "Niketan, Gate-02 STS", Latitude: 23.772594538, Longitude: 90.413396837, Capacity: 600 },
+                { Location: "Mirpur Ceramic Road STS", Latitude: 23.829523735, Longitude: 90.370601341, Capacity: 1100 },
+                { Location: "Mirpur Jalladkhana STS", Latitude: 23.81124235, Longitude: 90.375196381, Capacity: 1050 },
+                { Location: "Mirpur DNCC Market STS", Latitude: 23.776158794, Longitude: 90.399892878, Capacity: 950 },
+                { Location: "Staff quarter, Mirpur 1 STS", Latitude: 23.794837388, Longitude: 90.353648634, Capacity: 850 },
+                { Location: "East Side of Kashli Road, Mirpur STS", Latitude: 23.821963265, Longitude: 90.377630366, Capacity: 800 },
+                { Location: "Arambag Culvert, Mirpur STS", Latitude: 23.817887397, Longitude: 90.358673163, Capacity: 750 },
+                { Location: "Mirpur Mods Zone, Pallabi STS", Latitude: 23.829766407, Longitude: 90.366046057, Capacity: 700 },
+                { Location: "Shialbari Mor, Mirpur STS", Latitude: 23.810658363, Longitude: 90.357950915, Capacity: 650 },
+                { Location: "Rainkhola, Mirpur STS", Latitude: 23.805711248, Longitude: 90.351681081, Capacity: 550 },
+                { Location: "Vashantek bazar, Mirpur STS", Latitude: 23.812693284, Longitude: 90.392823239, Capacity: 500 },
+                { Location: "ManikdiKabarsthan STS", Latitude: 23.824049255, Longitude: 90.393596447, Capacity: 450 },
+                { Location: "Banasree STS", Latitude: 23.762602302, Longitude: 90.444467384, Capacity: 900 },
+                { Location: "KhilgoanKabarsthan STS", Latitude: 23.747852717, Longitude: 90.431345283, Capacity: 850 },
+                { Location: "Tejgoan, Orion Circle STS", Latitude: 23.766489808, Longitude: 90.406101796, Capacity: 950 },
+                { Location: "Tejgoan, Begunbari STS", Latitude: 23.762010865, Longitude: 90.402926219, Capacity: 1050 },
+                { Location: "Notun Bazar STS", Latitude: 23.798094503, Longitude: 90.426491458, Capacity: 1100 },
+                { Location: "Mohammadpur Town Hall STS", Latitude: 23.759728078, Longitude: 90.366403199, Capacity: 600 },
+                { Location: "Rayer Bazar STS", Latitude: 23.74467169, Longitude: 90.359645296, Capacity: 400 },
+                { Location: "Rayer Bazar Beribadh STS", Latitude: 23.740468723, Longitude: 90.361250839, Capacity: 350 },
+                { Location: "Moghbazar STS", Latitude: 23.748892369, Longitude: 90.401565036, Capacity: 300 }
+            ];
+
+        transferStations.forEach(station => {
+            L.marker([station.Latitude, station.Longitude], { icon: transferStationIcon }).addTo(map)
+                .bindPopup(`<b>Transfer Station</b><br>Location: ${station.Location}<br>Capacity: ${station.Capacity}`);
+        });
+
+        // Add landfills
+        var landfills = [
+            { Location: "Boro Bari Landfill", Latitude: 23.936804, Longitude: 90.384783, Capacity: 30000 },
+            { Location: "Amin Bazar Landfill", Latitude: 24.053255, Longitude: 90.420189, Capacity: 50000 }
+        ];
+
+        landfills.forEach(landfill => {
+            var marker = L.marker([landfill.Latitude, landfill.Longitude], { icon: landfillIcon }).addTo(map);
+            marker.bindPopup(`<b>Landfill</b><br>Location: ${landfill.Location}<br>Capacity: ${landfill.Capacity}`);
         
-        // Fit the map to the bounds of all markers
-        map.fitBounds(bounds);
-
-        // Function to calculate distance between two points using Haversine formula
-        function calculateDistance() {
-            var ward1Value = document.getElementById("ward1").value;
-            var ward2Value = document.getElementById("ward2").value;
-
-            if (ward1Value && ward2Value) {
-                var ward1 = stsData.find(station => station.WardNumber === ward1Value);
-                var ward2 = stsData.find(station => station.WardNumber === ward2Value);
-
-                // Calculate distance between selected wards
-                var distance = haversineDistance(ward1.Latitude, ward1.Longitude, ward2.Latitude, ward2.Longitude);
-
-                // Display the distance in an h1 tag
-                document.getElementById('distance').textContent = `Distance between ${ward1Value} and ${ward2Value}: ${distance.toFixed(2)} kilometers`;
-            } else {
-                alert("Please select both wards.");
-            }
-        }
-
-        // Function to calculate distance between two points using Haversine formula
-        function haversineDistance(lat1, lon1, lat2, lon2) {
-            const R = 6371e3; // Earth's radius in meters
-            const φ1 = lat1 * Math.PI / 180; // Convert latitude to radians
-            const φ2 = lat2 * Math.PI / 180;
-            const Δφ = (lat2 - lat1) * Math.PI / 180;
-            const Δλ = (lon2 - lon1) * Math.PI / 180;
-
-            const a = Math.sin(Δφ / 2) * Math.sin(Δφ / 2) +
-                      Math.cos(φ1) * Math.cos(φ2) *
-                      Math.sin(Δλ / 2) * Math.sin(Δλ / 2);
-            const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-
-            const distance = R * c; // Distance in meters
-            return distance / 1000; // Convert meters to kilometers
-        }
-
-        // Function to populate select options with ward numbers
-        function populateSelectOptions() {
-            var wardSelect1 = document.getElementById("ward1");
-            var wardSelect2 = document.getElementById("ward2");
-            stsData.forEach(station => {
-                var option1 = document.createElement("option");
-                option1.text = station.WardNumber;
-                option1.value = station.WardNumber;
-                var option2 = document.createElement("option");
-                option2.text = station.WardNumber;
-                option2.value = station.WardNumber;
-                wardSelect1.add(option1);
-                wardSelect2.add(option2);
-            });
-        }
-
-        // Call the function to populate select options
-        populateSelectOptions();
+        });
     </script>
 </body>
 </html>
