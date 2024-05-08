@@ -1,5 +1,6 @@
 # views.py
 from rest_framework import generics
+from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from .serializers import *
 from datetime import datetime, timedelta
@@ -15,7 +16,7 @@ from core.utils import aws_map_route_api
 
 class Last7DaysDumpingRecords(generics.ListAPIView):
     serializer_class = DumpingEntryRecordSerializer
-
+    #permission_classes = [IsAuthenticated]
     def get_queryset(self):
         # Calculate the date 7 days ago from today
         last_week = datetime.now() - timedelta(days=7)

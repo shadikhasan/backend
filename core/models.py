@@ -1,7 +1,6 @@
 from django.db import models
-from django.contrib.auth.models import AbstractUser
+from django.contrib.auth.models import AbstractUser, Group
 from waste_management.models import Role
-from django.contrib.auth.models import Group
 from managers.models import LandfillManager, STSManager
 
 class CustomUser(AbstractUser):
@@ -70,19 +69,20 @@ class CustomUser(AbstractUser):
             group_name = "STS Manager Permissions"
             is_staff = True
         elif self.role_id == 3:
-            group_name = "LandFill Manager Permissions"
+            group_name = "Landfill Manager Permissions"
             is_staff = True
 
-            # Attempt to get the group or create it if it doesn't exist
-            group, created = Group.objects.get_or_create(name=group_name)
-            if created:
-                print(f"Group '{group_name}' created.")
-            else:
-                print(f"Group '{group_name}' already exists.")
-            
-            # Add user to the group
-            self.groups.add(group)
-            print(f"User {self.username} added to group: {group_name}")
+        # Attempt to get the group or create it if it doesn't exist
+        group, created = Group.objects.get_or_create(name=group_name)
+        if created:
+            print(f"Group '{group_name}' created.")
+        else:
+            print(f"Group '{group_name}' already exists.")
+        
+        # Add user to the group
+        self.groups.add(group)  # Add the user to the group
+        
+        print(f"User {self.username} added to group: {group_name}")
 
         # Set user attributes
         self.is_staff = is_staff
