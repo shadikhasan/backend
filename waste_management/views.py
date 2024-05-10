@@ -2,8 +2,8 @@
 from rest_framework import viewsets
 from rest_framework.response import Response
 from rest_framework import status
-from .models import WasteTransfer
-from .serializers import WasteTransferSerializer
+from .models import *
+from .serializers import *
 
 class WasteTransferViewSet(viewsets.ModelViewSet):
     queryset = WasteTransfer.objects.all()
@@ -18,3 +18,15 @@ class WasteTransferViewSet(viewsets.ModelViewSet):
     def perform_create(self, serializer):
         # Customize create logic here if needed
         serializer.save()
+
+class SecondaryTransferStationViewSet(viewsets.ModelViewSet):
+    queryset = SecondaryTransferStation.objects.all()
+    serializer_class = SecondaryTransferStationSerializer
+
+class LandfillViewSet(viewsets.ModelViewSet):
+    queryset = Landfill.objects.all()
+    serializer_class = LandfillSerializer
+
+class VehicleViewSet(viewsets.ModelViewSet):
+    queryset = Vehicle.objects.all()
+    serializer_class = VehicleSerializer

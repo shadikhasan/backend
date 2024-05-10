@@ -22,3 +22,21 @@ class WasteTransferSerializer(serializers.ModelSerializer):
         destination = obj.Destination
         fastest_route = aws_map_route_api(source.Latitude, source.Longitude, destination.Latitude, destination.Longitude, 'FastestRoute')
         return fastest_route
+
+class SecondaryTransferStationSerializer(serializers.ModelSerializer):
+    http_method_names = ['get'] 
+    class Meta:
+        model = SecondaryTransferStation
+        fields = '__all__'
+
+class LandfillSerializer(serializers.ModelSerializer):
+    http_method_names = ['get'] 
+    class Meta:
+        model = Landfill
+        fields = '__all__'
+
+class VehicleSerializer(serializers.ModelSerializer):
+    http_method_names = ['get'] 
+    class Meta:
+        model = Vehicle
+        fields = '__all__'

@@ -17,4 +17,5 @@ urlpatterns = [
     path('', include('waste_management.urls')),
     path('', include('data_entry.urls')),
     path('', include('contractor.urls')),
+    path('', include('managers.urls')),
 ]

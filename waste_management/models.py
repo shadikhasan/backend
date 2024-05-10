@@ -28,6 +28,8 @@ class SecondaryTransferStation(models.Model):
     Latitude = models.FloatField(default=0.0)  # Default latitude of the GPS coordinates
     Longitude = models.FloatField(default=0.0) 
     area = models.ForeignKey(Area, on_delete=models.CASCADE)
+    fine_for_compensation = models.DecimalField(max_digits=10, decimal_places=2, default=500)  # New field for fine
+    collection_hours = models.CharField(max_length=100, default="08:00-17:00")  # New Field for Collection hours
     CreatedAt = models.DateTimeField(auto_now_add=True)
     UpdatedAt = models.DateTimeField(auto_now=True)
 

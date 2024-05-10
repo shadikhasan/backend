@@ -60,7 +60,7 @@ class LandfillManagerAdmin(admin.ModelAdmin):
 @admin.register(ContractorManager)
 @prevent_adding_permission_denied
 class ContractorManagerAdmin(admin.ModelAdmin):
-    list_display = ['user', 'assigned_contractor_company']
+    list_display = ['user', 'contact_number', 'assigned_contractor_company', 'access_level']
     
     def formfield_for_foreignkey(self, db_field, request, **kwargs):
         if db_field.name == "user":

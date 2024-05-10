@@ -1,0 +1,33 @@
+Creation of Contractor Manager User:
+Develop a module enabling administrators to create user accounts for contractor managers.
+Include necessary fields such as full name, email address, contact number, assigned contractor company, access level, etc.
+Implement user authentication and authorization mechanisms.
+
+Workforce Registration:
+Create a module for contractor managers to handle the registration of employees.
+Include fields for employee ID, full name, date of birth, date of hire, job title, payment rate per hour, contact information, assigned collection route.
+Ensure data validation and integrity.
+
+Monitoring Logged Working Hours:
+Develop a module for contractor managers to track the working hours of employees.
+Capture daily log-in and log-out times, total hours worked per day, overtime hours, absences, and leaves.
+Implement features for real-time tracking and reporting.
+
+Monitoring Transported Waste by Contractors:
+Create a module for STS managers to log waste collections from third-party contractors.
+Include fields for time and date of collection, amount of waste collected, contractor ID, waste type, designated STS for deposit, vehicle used for transportation.
+Ensure accurate recording of data and compliance with waste management protocols.
+
+Bill Generation:
+Develop a module for STS managers to generate bills for third-party contractors based on waste collection data.
+Implement the bill calculation algorithm described in the problem description.
+Ensure accurate calculation of basic pay, deficit, fine, and total bill.
+
+Create a Collection Plan:
+Implement a module allowing contractor managers to create schedules for waste collection plans.
+Include fields for area of collection, collection start time, duration for collection, number of laborers, number of vans, expected weight of daily solid waste.
+Ensure optimization of collection routes and scheduling.
+
+Schedule Collection:
+Develop a module for contractor managers to schedule waste collection according to optimized routes and timings.
+Implement features to suggest collection schedules to minimize delays and optimize resource use.
