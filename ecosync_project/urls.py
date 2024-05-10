@@ -16,4 +16,5 @@ urlpatterns = [
     path('', include('custom_api.urls')),
     path('', include('waste_management.urls')),
     path('', include('data_entry.urls')),
+    path('', include('contractor.urls')),
 ]

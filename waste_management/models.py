@@ -7,20 +7,33 @@ from django.db.models.signals import pre_save, post_delete
 
 
 
+class Area(models.Model):
+    ZONE_CHOICES = [
+        (1, 'Zone 1'),
+        (2, 'Zone 2'),
+        (3, 'Zone 3'),
+        (4, 'Zone 4'),
+        (5, 'Zone 5'),
+    ]
+    zone = models.IntegerField(choices=ZONE_CHOICES, primary_key=True)
+
+    def __str__(self) -> str:
+        return str(self.zone)
 class SecondaryTransferStation(models.Model):
 
     STSID = models.AutoField(primary_key=True)
     WardNumber = models.CharField(max_length=20)
     Location = models.CharField(max_length=255)
-    #Manager = models.ForeignKey('ecosync.CustomUser', on_delete=models.CASCADE, blank=True, null=True)
     Capacity = models.DecimalField(max_digits=10, decimal_places=2)
     Latitude = models.FloatField(default=0.0)  # Default latitude of the GPS coordinates
     Longitude = models.FloatField(default=0.0) 
+    area = models.ForeignKey(Area, on_delete=models.CASCADE)
     CreatedAt = models.DateTimeField(auto_now_add=True)
     UpdatedAt = models.DateTimeField(auto_now=True)
 
     def __str__(self) -> str:
-        return self.WardNumber
+        # return self.WardNumber 
+        return f"{self.WardNumber} ({self.Location})"
     
 class Landfill(models.Model):
     LandfillID = models.AutoField(primary_key=True)

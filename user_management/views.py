@@ -1,5 +1,5 @@
 # ecosync/views.py
-
+from django.contrib.auth.hashers import make_password
 from rest_framework import viewsets, status
 from rest_framework.response import Response
 from rest_framework.decorators import action
@@ -25,6 +25,11 @@ class CustomUserViewSet(viewsets.ModelViewSet):
         serializer.is_valid(raise_exception=True)
         self.perform_update(serializer)
         return Response(serializer.data)
+    
+    def perform_create(self, serializer):
+        # Hash the password before saving
+        hashed_password = make_password(self.request.data.get('password'))
+        serializer.save(password=hashed_password)
 
     def partial_update(self, request, *args, **kwargs):
         return self.update(request, *args, **kwargs)  # For PATCH, just call the update method

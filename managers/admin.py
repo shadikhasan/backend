@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.core.exceptions import PermissionDenied
-from .models import STSManager, LandfillManager
+from .models import STSManager, LandfillManager, ContractorManager
 from core.models import *
 
 # Define a decorator to prevent adding instances and raise PermissionDenied
@@ -46,6 +46,26 @@ class LandfillManagerAdmin(admin.ModelAdmin):
         if db_field.name == "user":
             # Filter the queryset to include only users who are landfill managers
             kwargs["queryset"] = CustomUser.objects.filter(role_id=3)  # Assuming landfill manager role ID is 2
+        return super().formfield_for_foreignkey(db_field, request, **kwargs)
+    
+    # Override the delete_queryset method to perform custom deletion
+    def delete_queryset(self, request, queryset):
+        for manager in queryset:
+            # Change the related CustomUser's role to "4" (unassigned) before deleting the manager instance
+            manager.user.role_id = 4
+            manager.user.save()
+        super().delete_queryset(request, queryset)
+        
+        
+@admin.register(ContractorManager)
+@prevent_adding_permission_denied
+class ContractorManagerAdmin(admin.ModelAdmin):
+    list_display = ['user', 'assigned_contractor_company']
+    
+    def formfield_for_foreignkey(self, db_field, request, **kwargs):
+        if db_field.name == "user":
+            # Filter the queryset to include only users who are contractor managers
+            kwargs["queryset"] = CustomUser.objects.filter(role_id=5)  # Assuming contractor manager role ID is 5
         return super().formfield_for_foreignkey(db_field, request, **kwargs)
     
     # Override the delete_queryset method to perform custom deletion

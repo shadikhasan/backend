@@ -48,6 +48,11 @@ class UserLogInView(APIView):
 
             user = authenticate(username=username, password=password)
             if user is not None:
+                if user.role == 4:
+                    return Response(
+                        {'error': 'You are not authorized to log in.'},
+                        status=status.HTTP_403_FORBIDDEN
+                    )
                 token = get_tokens_for_user(user)
                 return Response(
                     {

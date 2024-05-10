@@ -88,7 +88,7 @@ class VehicleAdmin(admin.ModelAdmin):
 class SecondaryTransferStationAdmin(admin.ModelAdmin):
     search_fields = ['STSID']
     ordering = ['STSID']
-    list_display = ['STSID', 'WardNumber', 'Location', 'Capacity', 'Latitude', 'Longitude', 'CreatedAt', 'UpdatedAt']
+    list_display = ['STSID', 'WardNumber', 'area', 'Location', 'Capacity', 'Latitude', 'Longitude', 'CreatedAt', 'UpdatedAt']
 @admin.register(Landfill)
 class LandfillAdmin(admin.ModelAdmin):
     search_fields = ['LandfillID']

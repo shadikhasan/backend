@@ -18,6 +18,7 @@ class Command(BaseCommand):
             {'Name': 'STS Manager', 'Description': 'Description of STS Manager role'},
             {'Name': 'Landfill Manager', 'Description': 'Description of Landfill Manager role'},
             {'Name': 'Unassigned', 'Description': 'Description of Unassigned role'},
+            {'Name': 'Contractor Manager', 'Description': 'Description of Contractor Manager role'},
         ]
 
         for role_data in initial_roles:

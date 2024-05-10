@@ -1,7 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser, Group
 from waste_management.models import Role
-from managers.models import LandfillManager, STSManager
+from managers.models import *
 
 class CustomUser(AbstractUser):
     first_name = models.CharField(max_length=255, blank=True)
@@ -24,19 +24,22 @@ class CustomUser(AbstractUser):
 
         if not is_new and self.role_id != original_role_id:
             print("Role changed. Assigning permission group...")
-            self.sync_managers_with_role()
+            self.sync_role_specific_objects()
             self.assign_permission_group()
 
-    def sync_managers_with_role(self):
-        # Delete existing manager instance
+    def sync_role_specific_objects(self):
+        # Delete existing manager instances
         LandfillManager.objects.filter(user=self).delete()
         STSManager.objects.filter(user=self).delete()
+        ContractorManager.objects.filter(user=self).delete()
 
         # Create new manager based on role
         if self.role_id == 3:
             LandfillManager.objects.create(user=self)
         elif self.role_id == 2:
             STSManager.objects.create(user=self)
+        elif self.role_id == 5:  # Assuming 5 is the ID for Contractor Manager role
+            ContractorManager.objects.create(user=self)
 
     def assign_permission_group(self):
         print("Assigning permission group...")
@@ -70,6 +73,9 @@ class CustomUser(AbstractUser):
             is_staff = True
         elif self.role_id == 3:
             group_name = "Landfill Manager Permissions"
+            is_staff = True
+        elif self.role_id == 5:
+            group_name = "Contractor Manager Permissions"
             is_staff = True
 
         # Attempt to get the group or create it if it doesn't exist
