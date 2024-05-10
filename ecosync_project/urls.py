@@ -18,4 +18,5 @@ urlpatterns = [
     path('', include('data_entry.urls')),
     path('', include('contractor.urls')),
     path('', include('managers.urls')),
+    path('app/', include('citizen_engagement.urls')),
 ]

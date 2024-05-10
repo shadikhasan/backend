@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'waste_management',
     'data_entry',
     'contractor',
+    'citizen_engagement',
 ]
 
 MIDDLEWARE = [

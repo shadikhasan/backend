@@ -4,7 +4,7 @@ from rest_framework.response import Response
 from rest_framework import status
 from .models import *
 from .serializers import *
-
+from core.permissions import *
 class WasteTransferViewSet(viewsets.ModelViewSet):
     queryset = WasteTransfer.objects.all()
     serializer_class = WasteTransferSerializer
@@ -22,11 +22,13 @@ class WasteTransferViewSet(viewsets.ModelViewSet):
 class SecondaryTransferStationViewSet(viewsets.ModelViewSet):
     queryset = SecondaryTransferStation.objects.all()
     serializer_class = SecondaryTransferStationSerializer
-
+    #permission_classes = [IsStsManager]
 class LandfillViewSet(viewsets.ModelViewSet):
     queryset = Landfill.objects.all()
     serializer_class = LandfillSerializer
+    #permission_classes = [IsStsManager]
 
 class VehicleViewSet(viewsets.ModelViewSet):
     queryset = Vehicle.objects.all()
     serializer_class = VehicleSerializer
+    #permission_classes = [IsStsManager]
