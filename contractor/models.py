@@ -80,7 +80,7 @@ class WasteCollection(models.Model):
 
 class Billing(models.Model):
     contractor = models.ForeignKey(ThirdPartyContractor, on_delete=models.CASCADE)
-    date = models.DateTimeField()
+    date = models.DateTimeField(auto_now_add=True)
     basic_pay = models.DecimalField(max_digits=10, decimal_places=2, default=0, editable=False)
     deficit = models.DecimalField(max_digits=10, decimal_places=2, default=0, editable=False)
     fine = models.DecimalField(max_digits=10, decimal_places=2, default=0, editable = False)

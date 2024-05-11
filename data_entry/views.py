@@ -7,7 +7,7 @@ from .serializers import SecondaryTransferStationSerializer, LandfillSerializer,
 class SecondaryTransferStationViewSet(viewsets.ModelViewSet):
     queryset = SecondaryTransferStation.objects.all()
     serializer_class = SecondaryTransferStationSerializer
-    permission_classes = [IsSystemAdmin]
+    #permission_classes = [IsSystemAdmin]
     
 class LandfillViewSet(viewsets.ModelViewSet):
     queryset = Landfill.objects.all()

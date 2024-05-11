@@ -2,6 +2,7 @@
 from rest_framework import serializers
 from django.contrib.auth import authenticate
 from core.models import CustomUser
+from .models import *
 
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
@@ -22,3 +23,19 @@ class LoginSerializer(serializers.Serializer):
         if not user:
             raise serializers.ValidationError("Incorrect username or password")
         return user
+
+class IssueReportSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = IssueReport
+        fields = ['location', 'issue_type', 'description', 'anonymous']
+
+class PublicNotificationSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = PublicNotification
+        fields = '__all__'
+        
+        
+class VolunteerRegistrationSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = VolunteerRegistration
+        fields = '__all__'

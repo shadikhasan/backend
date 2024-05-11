@@ -5,15 +5,16 @@ class STSManagerSerializer(serializers.ModelSerializer):
     user = CustomUserSerializer(read_only=True)
     class Meta:
         model = STSManager
-        fields = ['user', 'sts']
+        fields = ['id', 'user', 'sts']
 
 class LandfillManagerSerializer(serializers.ModelSerializer):
     user = CustomUserSerializer(read_only=True)
     class Meta:
         model = LandfillManager
-        fields = ['user', 'landfill']
+        fields = ['id', 'user', 'landfill']
 
 class ContractorManagerSerializer(serializers.ModelSerializer):
+    user = CustomUserSerializer(read_only=True)
     class Meta:
         model = ContractorManager
-        fields = ['user', 'contact_number', 'assigned_contractor_company', 'access_level']
+        fields = ['id', 'user', 'contact_number', 'assigned_contractor_company', 'access_level']
